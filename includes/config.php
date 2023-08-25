@@ -23,10 +23,10 @@ define('CLIENT_SECRET', 'EH7nVLIxyiTqnXgceOlDt7QGi2mNAX3v6FByJQw57cvPBpASp-qEfTw
  define('PAYPAL_CURRENCY', 'EUR'); // set your currency here
  
 
- $gateway = Omnipay::create('PayPal_Rest');
- $gateway->setClientId(CLIENT_ID);
- $gateway->setSecret(CLIENT_SECRET);
- $gateway->setTestMode(true); //set it to 'false' when go live
+ //$gateway = Omnipay::create('PayPal_Rest');
+// $gateway->setClientId(CLIENT_ID);
+ //$gateway->setSecret(CLIENT_SECRET);
+ //$gateway->setTestMode(true); //set it to 'false' when go live
 function generateRandomString($length = 3) {
     $characters = '0123456789';
     $charactersLength = strlen($characters);

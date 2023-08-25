@@ -71,7 +71,81 @@ if(strlen($_SESSION['alogin'])==0)
             <!--begin::Card body-->
             <div class="card-body pt-0">
                 <!--begin::Table-->
-                
+                  <form id="" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="payment_report.php" method="post" enctype="multipart">
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="mb-5 fv-row fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                  <label class=" fs-5 fw-semibold mb-2">Select User</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-close-on-select="false" data-placeholder="Select User"  name="userid" id="userid" >
+                                <option value="">Select User</option>
+                             <?php $querylang= mysqli_query($con,"select id, name, email from users where payment_status='1'");
+                                while($getlang= mysqli_fetch_array($querylang))
+                                {
+                             ?> 
+                         <option value="<?php echo htmlentities($getlang['id'])?>"><?php echo htmlentities($getlang['name'].' - '.$getlang['email'])?></option>
+                          <?php } ?>
+                            </select>
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                
+                                        </div>
+                                          <div class="col-lg-4">
+                                            <div class="mb-5 fv-row fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                  <label class=" fs-5 fw-semibold mb-2">Select Agent</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-close-on-select="false" data-placeholder="Select Agent"  name="agent_id" id="agent_id" >
+                                <option value="">Select Agent</option>
+                             <?php $queryagent= mysqli_query($con,"select * from agents where a_status='1'");
+                                while($getagent= mysqli_fetch_array($queryagent))
+                                {
+                             ?> 
+                         <option value="<?php echo htmlentities($getagent['agent_id'])?>"><?php echo htmlentities($getagent['agent_name'])?></option>
+                          <?php } ?>
+                            </select>
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-5 fv-row fv-plugins-icon-container">
+                                    
+                                    <label class=" fs-5 fw-semibold mb-2">Payment Method</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-close-on-select="false" data-placeholder="Select Payment Method"  name="method" id="method">
+                              
+                         <option value="">Select Payment Method</option>
+                         <option value="PayPal">PayPal</option>
+                         <option value="bank">Bank</option>
+                         <option value="admin">Admin</option>
+                            </select>
+                                    
+                                </div>
+                                        </div>
+                                         <div class="col-lg-4">
+                                            <div class="mb-5 fv-row fv-plugins-icon-container">
+                                    
+                                    <label class=" fs-5 fw-semibold mb-2">Payment Status</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-close-on-select="false" data-placeholder="Select Payment Status"  name="payment_status" id="payment_status" >
+                              
+                         <option value="">Select Payment Status</option>
+                         <option value="0">Active</option>
+                         <option value="1">Inactive</option>
+                         
+                            </select>
+                                    
+                                </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                        <div class="mb-5 fv-row fv-plugins-icon-container mt-8"> <button type="submit" id="" value="Search" class="btn btn-success">Search</button> <a href="payments.php"><button type="button" class="btn btn-danger btn-lg" data-bs-dismiss="modal">Reset</button></a></div></div>
+                                       
+                                        
+                                    </div>
+                                    </form>   
+                                     
                 <div class="table-responsive">
 
                <table id="kt_datatable_dom_positioning" class="table table-striped table-row-bordered gy-5 gs-7 border rounded">

@@ -1397,3 +1397,107 @@ function deleteconfirm_plan(id)
 		
 		});
 }
+
+function edit_notification(id=0){
+	$.ajax({
+			url: "notification/edit_notification.php?id="+id,
+			data: {id:id},
+			data: {id:id},
+			cache: false,
+			processData: false,
+			contentType: false,
+			type: 'POST',
+			success: function (data) {
+				$("#edit_notificaion_modal_body").html(data);
+
+				$("#edit_notificaion_modal").modal("show");
+				
+			}
+			});
+}
+
+function update_notification(id)
+{
+ 	var myform2 = document.getElementById("edit_notification_form");
+		var fd = new FormData(myform2);
+		$.ajax({
+		url: "notification/update_notification.php",
+		data: fd,
+		cache: false,
+		processData: false,
+		contentType: false,
+		type: 'POST',
+		success: function (dataofconfirm) {
+			Swal.fire({
+                    text: "Your Notification Updated Successfully!",
+                    icon: "success",
+                    buttonsStyling: !1,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                    }).then((function(t) {
+                            if (t.isConfirmed) {
+                                //e.querySelector('[name="email"]').value = "", e.querySelector('[name="password"]').value = "";
+                                var i = 'notifications.php';
+                                i && (location.href = i)
+                            }
+                        }))
+		$('#edit_notification_form').trigger("reset");
+		$("#edit_notificaion_modal").modal("hide");
+		$("#updatenotification").html(dataofconfirm);
+		}
+		
+		});
+}
+function delete_notification(id=0){
+	$.ajax({
+			url: "notification/delete_notification.php?id="+id,
+			data: {id:id},
+			cache: false,
+			processData: false,
+			contentType: false,
+			type: 'POST',
+			success: function (data) {
+				$("#deletenotificationModal_body").html(data);
+
+				$("#deletenotificationModal").modal("show");
+				
+			}
+			});
+}
+
+function deleteconfirm_notification(id)
+{
+ 	var myform2 = document.getElementById("deletenot");
+		var fd = new FormData(myform2);
+		$.ajax({
+		url: "notification/deleteconfirm.php",
+		data: fd,
+		cache: false,
+		processData: false,
+		contentType: false,
+		type: 'POST',
+		success: function (dataofconfirm) {
+			Swal.fire({
+                    text: "Your Notification Deleted Successfully!",
+                    icon: "success",
+                    buttonsStyling: !1,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                    }).then((function(t) {
+                            if (t.isConfirmed) {
+                                //e.querySelector('[name="email"]').value = "", e.querySelector('[name="password"]').value = "";
+                                var i = 'notifications.php';
+                                i && (location.href = i)
+                            }
+                        }))
+		$('#deletenot').trigger("reset");
+		$("#deletenotificationModal").modal("hide");
+		$("#deletconfirmnotification").html(dataofconfirm);
+		}
+		
+		});
+}

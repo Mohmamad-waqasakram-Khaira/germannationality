@@ -26,19 +26,19 @@ $headers  = "From: "."info@germannationality.de"."\r\n";
 //$headers .= "CC: susan@example.com\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$message = '<p><strong>Hallo,</strong></p>
-<p>Vielen Dank, dass Sie die Option Banküberweisung ausgewählt haben. Sobald Ihre Zahlung eingegangen ist, wird Ihr Konto aktiviert.<br>
-Bitte beachten Sie: Es kann 2 Werktage dauern, bis wir die Zahlung erhalten.<br>
-Mit freundlichen Grüßen<br>
-www.germanNationality.de</p>
+$message = '<p><strong>Hello,</strong></p>
+<p>Thank you for selecting the bank transfer option. Once your payment has been received, your account will be activated.<br>
+Please note: it may take 2 business days for us to receive payment.<br>
+Best regards<br>
+www.ukcarlicense.com</p>
 <img src="https://adminpanel.germannationality.de/upload/logoff.png" width="150" />';
 
    mail($to, $subject, $message, $headers);
-	$returnArray = [ 'success' => true, 'message' => 'Ihre Zahlung wurde erfolgreich durchgeführt. Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihr Konto zu aktivieren' ];
+	$returnArray = [ 'success' => true, 'message' => 'Your Payment done successfully, Our Team will be in touch soon to activate Your Account!!' ];
 echo json_encode($returnArray);
 }
 else{
-$returnArray = [ 'success' => false, 'message' => 'Ungültige Details' ];
+$returnArray = [ 'success' => false, 'message' => 'Invalid Details' ];
 echo json_encode($returnArray);
 }
 ?>
