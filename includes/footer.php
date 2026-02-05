@@ -20,6 +20,12 @@
 <!--end::Help drawer-->
 <!--end::Engage drawers-->
 
+<?php 
+require_once 'live_support_config.php';
+$supportWidget = new LiveSupportWidget();
+echo $supportWidget->renderWidget();
+?>
+
 <!-- Modal -->
 
 <div class="modal fade" tabindex="-1" id="kt_modal_1">
@@ -65,20 +71,20 @@
 	<script src="<?php echo base_url;?>assets/plugins/global/plugins.bundle.js"></script>
 	<script src="<?php echo base_url?>assets/js/scripts.bundle.js"></script>
 	<!--end::Global Javascript Bundle-->
-	<script src="<?php echo base_url?>assets/js/custom/authentication/registration/general.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/authentication/registration/payment.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/authentication/workshop/general.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/authentication/workshop/cabstract.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/authentication/workshop/payment.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/authentication/registration/general.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/authentication/registration/payment.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/authentication/workshop/general.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/authentication/workshop/cabstract.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/authentication/workshop/payment.js"></script>
 	<!--begin::Vendors Javascript(used by this page)-->
 	
 	
-	<script src="<?php echo base_url?>assets/plugins/custom/datatables/datatables.bundle.js"></script>
+	<script defer src="<?php echo base_url?>assets/plugins/custom/datatables/datatables.bundle.js"></script>
 	<!--end::Vendors Javascript-->
 	<!--begin::Custom Javascript(used by this page)-->
-	<script src="<?php echo base_url?>assets/js/widgets.bundle.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/widgets.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/apps/chat/chat.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/widgets.bundle.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/widgets.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/apps/chat/chat.js"></script>
 	<script type="text/javascript">
    $("#kt_datatable_dom_positioning").DataTable({
  "language": {
@@ -98,14 +104,17 @@
   ">"
 });
 </script>
-	<script src="<?php echo base_url?>assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/utilities/modals/create-app.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/utilities/modals/new-target.js"></script>
-	<script src="<?php echo base_url?>assets/js/custom/utilities/modals/users-search.js"></script>
-	<script type="text/javascript" src="category/category.js"></script>
-	<script type="text/javascript" src="main.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/utilities/modals/create-app.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/utilities/modals/new-target.js"></script>
+	<script defer src="<?php echo base_url?>assets/js/custom/utilities/modals/users-search.js"></script>
+	<script defer type="text/javascript" src="category/category.js"></script>
+	<script defer type="text/javascript" src="main.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
+	<script>
+var supportChatLoader=function(){var s=document.createElement('script');s.type='text/javascript';s.async=!0;s.src='https://embed.tawk.to/5f8e9c4e4704467e89f0c1e9/default';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(window.attachEvent){window.attachEvent('onload',supportChatLoader)}else{window.addEventListener('load',supportChatLoader,!1)}
+	</script>
 	</body>
 	<!--end::Body-->
 </html>
