@@ -112,9 +112,6 @@ echo $supportWidget->renderWidget();
 	<script defer type="text/javascript" src="main.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
-	<script>
-var supportChatLoader=function(){var s=document.createElement('script');s.type='text/javascript';s.async=!0;s.src='https://embed.tawk.to/5f8e9c4e4704467e89f0c1e9/default';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(window.attachEvent){window.attachEvent('onload',supportChatLoader)}else{window.addEventListener('load',supportChatLoader,!1)}
-	</script>
 	</body>
 	<!--end::Body-->
 </html>

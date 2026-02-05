@@ -32,8 +32,7 @@ class LiveSupportWidget {
         $output .= "var f=document.getElementsByTagName('script')[0];\n";
         $output .= "f.parentNode.insertBefore(w,f);\n";
         $output .= "};\n";
-        $output .= "if(window.attachEvent){window.attachEvent('onload',initLiveSupport);}";
-        $output .= "else{window.addEventListener('load',initLiveSupport,false);}\n";
+        $output .= "window.addEventListener('load',initLiveSupport,false);\n";
         $output .= "</script>\n";
         
         return $output;
